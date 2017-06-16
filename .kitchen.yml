@@ -2,6 +2,14 @@
 driver:
   name: vagrant
 
+  network: 
+    # for ponyserve web
+    - ["forwarded_port", {guest: 9292, host: 9292}] 
+    # for nationalparks web
+    - ["forwarded_port", {guest: 8080, host: 8080}]
+    # for nationalparks hab
+    - ["forwarded_port", {guest: 9631, host: 9631}]
+    
 provisioner:
   name: chef_zero
   # You may wish to disable always updating cookbooks in CI or other testing environments.
@@ -9,11 +17,11 @@ provisioner:
   #   always_update_cookbooks: <%= !ENV['CI'] %>
   always_update_cookbooks: true
 
+
 verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-16.04
   - name: centos-7.2
 
 suites:

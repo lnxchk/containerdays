@@ -6,6 +6,9 @@ description 'Installs/Configures containerdays'
 long_description 'Installs/Configures containerdays'
 version '0.1.0'
 
+depends 'docker', '~> 2.15'
+depends 'habitat','~> 0.4.0'
+
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.

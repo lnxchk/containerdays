@@ -1,0 +1,9 @@
+version: '2'
+services:
+  mongo:
+    image: nathenharvey/mongodb:latest
+    ports: 
+      - "27017:27017"
+    hostname: "mongo"
+    environment:
+      HAB_MONGODB: "[mongod.net]\nbind_ip = '0.0.0.0'\n[mongod.security]\ncluster_auth_mode = ''"
